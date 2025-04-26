@@ -1,3 +1,11 @@
+const AdmZip = require('adm-zip');
+
+if (!fs.existsSync('./session')) {
+  console.log('Session folder not found. Extracting from session.zip...');
+  const zip = new AdmZip('./session.zip');
+  zip.extractAllTo('./', true);
+  console.log('Session extracted successfully.');
+}
 const {
   Telegraf,
   Markup,
